@@ -25,7 +25,7 @@ function SwitchLocomotion(index: number) {
 }
 
 function SwitchCrouch(isCrouch: number) {
-    CrouchAction.do(isCrouch === 1);
+    CrouchAction.do(isCrouch);
 }
 
 export const GMList: GMCommand[] = [

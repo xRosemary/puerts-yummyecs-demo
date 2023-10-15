@@ -25,7 +25,7 @@ function SwitchLocomotion(index) {
     PublicAE_1.SwitchLocomotionLayerAction.do(layerPath);
 }
 function SwitchCrouch(isCrouch) {
-    PublicAE_1.CrouchAction.do(isCrouch === 1);
+    PublicAE_1.CrouchAction.do(isCrouch);
 }
 exports.GMList = [
     {
