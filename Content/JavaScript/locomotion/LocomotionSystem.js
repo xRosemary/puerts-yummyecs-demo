@@ -32,7 +32,7 @@ class LocomotionSystem extends yummyecs_1.F.System {
     onCrouchAction(action) {
         let player = UE.GameplayStatics.GetPlayerCharacter(GameWorld, 0);
         this.debug(action.isCrouch);
-        if (action.isCrouch === true) {
+        if (action.isCrouch) {
             player.Crouch(action.bClientSimulation);
         }
         else {

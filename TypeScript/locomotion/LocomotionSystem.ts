@@ -31,7 +31,7 @@ export class LocomotionSystem extends F.System {
     protected onCrouchAction(action: CrouchAction) {
         let player = UE.GameplayStatics.GetPlayerCharacter(GameWorld, 0);
         this.debug(action.isCrouch);
-        if (action.isCrouch === true) {
+        if (action.isCrouch) {
             player.Crouch(action.bClientSimulation);
         } else {
             player.UnCrouch(action.bClientSimulation);
