@@ -29,6 +29,16 @@ class LocomotionSystem extends yummyecs_1.F.System {
         }
         this.linkAnimClassLayers(action.layerPath, player);
     }
+    onCrouchAction(action) {
+        let player = UE.GameplayStatics.GetPlayerCharacter(GameWorld, 0);
+        this.debug(action.isCrouch);
+        if (action.isCrouch === true) {
+            player.Crouch(action.bClientSimulation);
+        }
+        else {
+            player.UnCrouch(action.bClientSimulation);
+        }
+    }
     linkAnimClassLayers(layerPath, player) {
         let bpClass = UE.Class.Load(layerPath);
         player.Mesh.LinkAnimClassLayers(bpClass);
@@ -40,5 +50,8 @@ __decorate([
 __decorate([
     yummyecs_1.D.listen(PublicAE_1.SwitchLocomotionLayerAction)
 ], LocomotionSystem.prototype, "onSwitchLocomotionLayerAction", null);
+__decorate([
+    yummyecs_1.D.listen(PublicAE_1.CrouchAction)
+], LocomotionSystem.prototype, "onCrouchAction", null);
 exports.LocomotionSystem = LocomotionSystem;
 //# sourceMappingURL=LocomotionSystem.js.map

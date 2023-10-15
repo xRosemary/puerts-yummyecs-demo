@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SwitchLocomotionLayerAction = void 0;
+exports.CrouchAction = exports.SwitchLocomotionLayerAction = void 0;
 const yummyecs_1 = require("yummyecs");
 class SwitchLocomotionLayerAction extends yummyecs_1.F.Action {
     layerPath;
@@ -12,4 +12,14 @@ class SwitchLocomotionLayerAction extends yummyecs_1.F.Action {
     }
 }
 exports.SwitchLocomotionLayerAction = SwitchLocomotionLayerAction;
+class CrouchAction extends yummyecs_1.F.Action {
+    isCrouch;
+    bClientSimulation;
+    constructor(isCrouch, bClientSimulation) {
+        super();
+        this.isCrouch = isCrouch;
+        this.bClientSimulation = bClientSimulation;
+    }
+}
+exports.CrouchAction = CrouchAction;
 //# sourceMappingURL=PublicAE.js.map

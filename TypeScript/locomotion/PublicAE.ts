@@ -6,3 +6,9 @@ export class SwitchLocomotionLayerAction extends F.Action {
         super();
     }
 }
+
+export class CrouchAction extends F.Action {
+    constructor(public isCrouch: boolean, public bClientSimulation?: boolean) {
+        super();
+    }
+}

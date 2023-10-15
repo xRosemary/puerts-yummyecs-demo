@@ -1,6 +1,6 @@
 import { GMCommand } from '../..';
 import { ANIM_LAYER } from '../Define';
-import { SwitchLocomotionLayerAction } from '../PublicAE';
+import { CrouchAction, SwitchLocomotionLayerAction } from '../PublicAE';
 
 function SwitchLocomotion(index: number) {
     let layerPath: string;
@@ -24,9 +24,17 @@ function SwitchLocomotion(index: number) {
     SwitchLocomotionLayerAction.do(layerPath);
 }
 
+function SwitchCrouch(isCrouch: number) {
+    CrouchAction.do(isCrouch === 1);
+}
+
 export const GMList: GMCommand[] = [
     {
         func: SwitchLocomotion,
+        paramTypes: [Number],
+    },
+    {
+        func: SwitchCrouch,
         paramTypes: [Number],
     },
 ];

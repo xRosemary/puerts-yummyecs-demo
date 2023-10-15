@@ -19,8 +19,8 @@
         "processed": true,
         "isBP": true
     },
-    "F:/UE5Project/TPS/TypeScript/test.ts": {
-        "version": "b7c129919cba3deab2313e023f1b22c2",
+    "F:/UE5Project/TPS/TypeScript/index.ts": {
+        "version": "231ebb22729ec65c10156801359d4f4c",
         "processed": true,
         "isBP": false
     },
@@ -39,23 +39,33 @@
         "processed": true,
         "isBP": false
     },
-    "F:/UE5Project/TPS/TypeScript/gm/GMDefine.ts": {
-        "version": "715d1ed432471b9df29dc4f7f3cd5497",
-        "processed": true,
-        "isBP": false
-    },
-    "F:/UE5Project/TPS/TypeScript/gm/index.ts": {
-        "version": "7f5f412bec0d854ecc98b031d0b0afc2",
+    "F:/UE5Project/TPS/TypeScript/locomotion/Define.ts": {
+        "version": "a5c03a4a41ef8822e1e4518b43136066",
         "processed": true,
         "isBP": false
     },
     "F:/UE5Project/TPS/TypeScript/locomotion/LocomotionSystem.ts": {
-        "version": "9f57a905798ff8cef71146b403839067",
+        "version": "5ae3e15b23ac4d339d6a1ba8c8b76d33",
+        "processed": true,
+        "isBP": false
+    },
+    "F:/UE5Project/TPS/TypeScript/locomotion/PublicAE.ts": {
+        "version": "b42cff2b26ad59469b6de2491fc97018",
         "processed": true,
         "isBP": false
     },
     "F:/UE5Project/TPS/TypeScript/locomotion/index.ts": {
         "version": "30028fa13cffe5fac25750feb6ebffe9",
+        "processed": true,
+        "isBP": false
+    },
+    "F:/UE5Project/TPS/TypeScript/locomotion/gm/LocomotionGM.ts": {
+        "version": "ae476af66c5c0581e817c5d9cbaaa5da",
+        "processed": true,
+        "isBP": false
+    },
+    "F:/UE5Project/TPS/TypeScript/locomotion/gm/index.ts": {
+        "version": "306596612dce5455e73fe2cc682d5c8c",
         "processed": true,
         "isBP": false
     },
@@ -678,40 +688,5 @@
     "F:/UE5Project/TPS/Content/JavaScript/PuertsEditor/node_modules/typescript/lib/lib.dom.iterable.d.ts": {
         "version": "977f6792324dbfc2fcc8eadc6f1b0452",
         "processed": false
-    },
-    "F:/UE5Project/TPS/TypeScript/locomotion/Define.ts": {
-        "version": "a5c03a4a41ef8822e1e4518b43136066",
-        "processed": true,
-        "isBP": false
-    },
-    "F:/UE5Project/TPS/TypeScript/locomotion/PublicAE.ts": {
-        "version": "a728a7c05742ac633473333f12687dd7",
-        "processed": true,
-        "isBP": false
-    },
-    "F:/UE5Project/TPS/TypeScript/gm/Locomotion.ts": {
-        "version": "9b5eb47543f0574daa88c5a6d4103215",
-        "processed": true,
-        "isBP": false
-    },
-    "F:/UE5Project/TPS/TypeScript/index.ts": {
-        "version": "231ebb22729ec65c10156801359d4f4c",
-        "processed": true,
-        "isBP": false
-    },
-    "F:/UE5Project/TPS/TypeScript/locomotion/gm/Locomotion.ts": {
-        "version": "488ca5c105e00d78b770019adf47ba67",
-        "processed": true,
-        "isBP": false
-    },
-    "F:/UE5Project/TPS/TypeScript/locomotion/gm/index.ts": {
-        "version": "306596612dce5455e73fe2cc682d5c8c",
-        "processed": true,
-        "isBP": false
-    },
-    "F:/UE5Project/TPS/TypeScript/locomotion/gm/LocomotionGM.ts": {
-        "version": "1d5026c23804ce956cb3e91a9cdbe091",
-        "processed": true,
-        "isBP": false
     }
 }
