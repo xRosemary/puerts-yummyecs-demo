@@ -1,0 +1,1 @@
+{"version":3,"file":"BaseCharacter.js","sourceRoot":"","sources":["../../../TypeScript/character/BaseCharacter.ts"],"names":[],"mappings":";;AAAA,yBAAyB;AACzB,yCAAgD;AAGhD,MAAM,aAAc,SAAQ,EAAE,CAAC,YAAY;IACvC,gBAAgB;QACZ,KAAK,CAAC,gBAAgB,EAAE,CAAC;QACzB,6BAAkB,CAAC,QAAQ,CAAC,IAAI,CAAC,CAAC;IACtC,CAAC;CACJ;AAED,kBAAe,aAAa,CAAC"}

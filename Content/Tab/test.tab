@@ -1,0 +1,5 @@
+test	number	string	string[]	number[]
+#注释	id	text	strs	ns
+	1	角色详情	a,b,c	1,2,3
+#	2	关卡详情	a,b,c	1,2,3
+	3	关卡详情	d,e,f	4,5,6

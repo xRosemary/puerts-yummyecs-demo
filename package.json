@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "rewatch": "del /F /Q Content\\JavaScript\\*.js Content\\JavaScript\\*.js.map && tsc -w",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@types/node": "^20.8.2",
+    "yummyecs": "file:D:/MyCodeProject/vsCodeProject/typescript/YummyECS/yummyecs-1.0.0.tgz"
+  }
+}
