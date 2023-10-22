@@ -1,21 +1,21 @@
 {
     "F:/UE5Project/TPS/TypeScript/Define.ts": {
-        "version": "24db96ee2eac5392d73398a23f762d26",
+        "version": "1f29a41bb9ad6b987c4304b524d1f82c",
         "processed": true,
         "isBP": false
     },
     "F:/UE5Project/TPS/TypeScript/FrameWorkLoader.ts": {
-        "version": "9213e19f7f9809c2f1751fedb4d81b6a",
+        "version": "954aa389b115a81185e5f35ef9b32f5a",
         "processed": true,
         "isBP": true
     },
     "F:/UE5Project/TPS/TypeScript/PublicAE.ts": {
-        "version": "f535a0b1e8b05b8491766788dfcb2890",
+        "version": "6dda522179b38a2d1599bca019c6975b",
         "processed": true,
         "isBP": false
     },
     "F:/UE5Project/TPS/TypeScript/TSGameMode.ts": {
-        "version": "cebd681b8b264103ed6fa5181603a5af",
+        "version": "bbb6ab3b41df8a380695e05df6eb60d9",
         "processed": true,
         "isBP": true
     },
@@ -25,7 +25,7 @@
         "isBP": false
     },
     "F:/UE5Project/TPS/TypeScript/character/BaseCharacter.ts": {
-        "version": "f0e6bff5df40555a161395c6002d4e50",
+        "version": "6da5992934127a5289c8f2597b41936b",
         "processed": true,
         "isBP": true
     },
@@ -45,7 +45,7 @@
         "isBP": false
     },
     "F:/UE5Project/TPS/TypeScript/locomotion/LocomotionSystem.ts": {
-        "version": "7185111b323d77670790f40dd206fe1f",
+        "version": "ada2191abafe0f3571843c78d4909d1b",
         "processed": true,
         "isBP": false
     },
@@ -69,12 +69,27 @@
         "processed": true,
         "isBP": false
     },
+    "F:/UE5Project/TPS/TypeScript/locomotion/ui/Define.ts": {
+        "version": "1b3f29d4efecb4441bc1389941839c90",
+        "processed": true,
+        "isBP": false
+    },
+    "F:/UE5Project/TPS/TypeScript/locomotion/ui/TestUISystem.ts": {
+        "version": "73808f116b782528f2ec46bb1bd9ed53",
+        "processed": true,
+        "isBP": false
+    },
+    "F:/UE5Project/TPS/TypeScript/locomotion/ui/index.ts": {
+        "version": "5418b7a76e105925793cecad013617eb",
+        "processed": true,
+        "isBP": false
+    },
     "F:/UE5Project/TPS/node_modules/yummyecs/types/index.d.ts": {
         "version": "e3a258ab87adb59f1624388fa4384fae",
         "processed": false
     },
     "F:/UE5Project/TPS/node_modules/yummyecs/types/Common/index.d.ts": {
-        "version": "8ceb9fe96bd697d20d2742214d04df8b",
+        "version": "acdd03537c986d3541fa9c8e57def0c5",
         "processed": false
     },
     "F:/UE5Project/TPS/node_modules/yummyecs/types/Common/RelationMapping.d.ts": {
@@ -87,6 +102,10 @@
     },
     "F:/UE5Project/TPS/node_modules/yummyecs/types/Common/Log.d.ts": {
         "version": "1c2314a55a7bbcd5311313e80462afcb",
+        "processed": false
+    },
+    "F:/UE5Project/TPS/node_modules/yummyecs/types/Common/Define.d.ts": {
+        "version": "6d0c33a40b75cf8854997d1073f0e6a9",
         "processed": false
     },
     "F:/UE5Project/TPS/node_modules/yummyecs/types/Decorator/index.d.ts": {
@@ -230,7 +249,7 @@
         "processed": false
     },
     "F:/UE5Project/TPS/Typing/ue/ue.d.ts": {
-        "version": "fe5c3a53dcd9b820011cd4250412fd9b",
+        "version": "28bdb198263c47aaaaa120d68c42036e",
         "processed": false
     },
     "F:/UE5Project/TPS/Typing/ue/ue_s.d.ts": {
@@ -242,7 +261,7 @@
         "processed": false
     },
     "F:/UE5Project/TPS/Typing/ue/ue_bp.d.ts": {
-        "version": "6a929010bec241f73f373b12e4d6c8f3",
+        "version": "806de64bc497fd79a768a5c7101282ea",
         "processed": false
     },
     "F:/UE5Project/TPS/node_modules/@types/node/ts4.8/index.d.ts": {
@@ -688,5 +707,10 @@
     "F:/UE5Project/TPS/Content/JavaScript/PuertsEditor/node_modules/typescript/lib/lib.dom.iterable.d.ts": {
         "version": "977f6792324dbfc2fcc8eadc6f1b0452",
         "processed": false
+    },
+    "F:/UE5Project/TPS/TypeScript/character/CharacterSystem.ts": {
+        "version": "1f6c69577e60acf66a8e20c5ae420e82",
+        "processed": true,
+        "isBP": false
     }
 }

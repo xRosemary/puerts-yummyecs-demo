@@ -2886,7 +2886,7 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
-// __TYPE_DECL_START: 9A39EC2E4850370CCA884685E1EFECBB
+// __TYPE_DECL_START: 31573CE243456D785CA519BDDDE408B4
     namespace Game.Characters.Heroes.Mannequin.Animations.Locomotion.Pistol.ABP_PistolAnimLayers {
         class ABP_PistolAnimLayers_C extends UE.Game.Characters.Heroes.Mannequin.Animations.LinkedLayers.ABP_ItemAnimLayersBase.ABP_ItemAnimLayersBase_C {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
@@ -2900,7 +2900,7 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
-// __TYPE_DECL_START: 9A39EC2E4850370CCA884685E1EFECBB
+// __TYPE_DECL_START: 31573CE243456D785CA519BDDDE408B4
     namespace Game.Characters.Heroes.Mannequin.Animations.Locomotion.Pistol.ABP_PistolAnimLayers {
         class AnimBlueprintGeneratedConstantData extends UE.Game.Characters.Heroes.Mannequin.Animations.LinkedLayers.ABP_ItemAnimLayersBase.AnimBlueprintGeneratedConstantData {
             constructor();
@@ -4418,7 +4418,7 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
-// __TYPE_DECL_START: 581FA66A4D77DBFD15054DA2F2470AE4
+// __TYPE_DECL_START: 4A3CAE4D4588D22A4DF59B90CBD94D05
     namespace Game.Blueprints.TypeScript.character.BaseCharacter {
         class BaseCharacter_C extends UE.TPSCharacter {
             constructor(Outer?: Object, Name?: string, ObjectFlags?: number);

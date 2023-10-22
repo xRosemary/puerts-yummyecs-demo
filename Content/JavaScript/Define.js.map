@@ -1,1 +1,1 @@
-{"version":3,"file":"Define.js","sourceRoot":"","sources":["../../TypeScript/Define.ts"],"names":[],"mappings":";;;AAAA,uCAA6B;AAC7B,6CAAgD;AAEnC,QAAA,mBAAmB,GAAG,CAAC,YAAC,CAAC,QAAQ,EAAE,YAAC,CAAC,eAAe,EAAE,YAAC,CAAC,QAAQ,EAAE,6BAAgB,CAAC,CAAC;AAEpF,QAAA,WAAW,GAAG,gBAAgB,CAAC"}
+{"version":3,"file":"Define.js","sourceRoot":"","sources":["../../TypeScript/Define.ts"],"names":[],"mappings":";;;AAAA,uCAA6B;AAEhB,QAAA,mBAAmB,GAAG,CAAC,YAAC,CAAC,QAAQ,EAAE,YAAC,CAAC,eAAe,EAAE,YAAC,CAAC,QAAQ,CAAC,CAAC;AAElE,QAAA,WAAW,GAAG,gBAAgB,CAAC"}

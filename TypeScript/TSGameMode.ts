@@ -9,7 +9,7 @@ class TSGameMode extends UE.GameModeBase {
     }
 
     ReceiveBeginPlay(): void {
-        BeginPlayEvent.dispatch();
+        BeginPlayEvent.dispatch(this.GetWorld());
     }
 }
 

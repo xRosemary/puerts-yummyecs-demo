@@ -14,7 +14,7 @@ class TSGameMode extends UE.GameModeBase {
         yummyecs_1.F.GmAction.do(funcName, params.split(' '));
     }
     ReceiveBeginPlay() {
-        PublicAE_1.BeginPlayEvent.dispatch();
+        PublicAE_1.BeginPlayEvent.dispatch(this.GetWorld());
     }
 }
 __decorate([

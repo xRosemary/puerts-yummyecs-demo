@@ -11,6 +11,7 @@
 #include "Misc/Paths.h"
 #include "Engine/GameInstance.h"
 #include "Blueprint/UserWidget.h"
+#include "EnhancedInputComponent.h"
 #include "TSExtensionMethods.generated.h"
 
 /**
@@ -45,8 +46,18 @@ class TPS_API UTSExtensionMethods : public UExtensionMethods
 	static void AddMappingContext(UEnhancedInputLocalPlayerSubsystem* SubSystem, const UInputMappingContext* MappingContext, int32 Priority, const FModifyContextOptions& Options = FModifyContextOptions());
 
 	UFUNCTION(BlueprintCallable, Category = "WorldExtension")
+	static void BindAction(UEnhancedInputComponent* Component, const UInputAction* Action, ETriggerEvent TriggerEvent, UObject* Object, FName FunctionName);
+
+	UFUNCTION(BlueprintCallable, Category = "WorldExtension")
+	static void SetPath(FSoftObjectPath SoftObjectPath, const FString& Path);
+	
+	UFUNCTION(BlueprintCallable, Category = "WorldExtension")
+	static UObject* ResolveObject(FSoftObjectPath SoftObjectPath);
+	
+	UFUNCTION(BlueprintCallable, Category = "WorldExtension")
 	static FString GetContentDir(UGameInstance* gameInstance);
 
 	UFUNCTION(BlueprintCallable, BlueprintCosmetic, Category = "WorldExtension")
 	static UUserWidget* CreateWidget(UWorld* World, UClass* Class);
+	friend class UEnhancedInputComponent;
 };

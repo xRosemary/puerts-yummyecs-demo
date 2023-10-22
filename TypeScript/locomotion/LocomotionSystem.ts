@@ -4,6 +4,7 @@ import { ANIM_LAYER } from './Define';
 import { CrouchAction, SwitchLocomotionLayerAction } from './PublicAE';
 import { PlayerSpawnedEvent } from '../character';
 import { GMList } from './gm';
+import { TestUISystem, UMG_NAME } from './ui';
 
 let GameWorld: UE.World;
 
@@ -15,6 +16,9 @@ export class LocomotionSystem extends F.System {
         GMList.forEach((v) => {
             F.registerGMCommand(v.func, v.paramTypes);
         });
+
+        F.CreateSystemAction.do(TestUISystem);
+        F.OpenUMG.do(UMG_NAME);
     }
 
     @D.listen(SwitchLocomotionLayerAction)

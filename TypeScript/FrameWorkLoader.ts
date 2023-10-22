@@ -1,9 +1,12 @@
 import * as UE from 'ue';
-import { F } from 'yummyecs';
+import { C, F } from 'yummyecs';
 import { DEFAULT_INIT_SYSTEM, DEFAULT_MAP } from './Define';
 
 class FrameWorkLoader extends UE.Actor {
     ReceiveBeginPlay(): void {
+        // 将Game instance传给框架
+        C.InitGameInstance(this.GetGameInstance());
+
         // 初始化系统池
         F.SystemPoolStore.getInstance().systems.push(new F.PoolSystem());
 

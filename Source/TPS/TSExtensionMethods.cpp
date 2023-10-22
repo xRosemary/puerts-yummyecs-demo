@@ -56,6 +56,31 @@ void UTSExtensionMethods::AddMappingContext(UEnhancedInputLocalPlayerSubsystem* 
     SubSystem->AddMappingContext(MappingContext, Priority, Options);
 }
 
+void UTSExtensionMethods::BindAction(UEnhancedInputComponent* Component, const UInputAction* Action, ETriggerEvent TriggerEvent, UObject* Object, FName FunctionName)
+{
+    class MyUEnhancedInputComponent : public UEnhancedInputComponent
+    {
+        friend UTSExtensionMethods;
+        TArray<TUniquePtr<FEnhancedInputActionEventBinding>> EnhancedActionEventBindings;
+    };
+
+    TUniquePtr<FEnhancedInputActionEventDelegateBinding<FEnhancedInputActionHandlerSignature>> AB = MakeUnique<FEnhancedInputActionEventDelegateBinding<FEnhancedInputActionHandlerSignature>>(Action, TriggerEvent);
+    // Component->BindAction(Action, TriggerEvent, Object, FunctionName);
+    AB->Delegate.SetShouldFireWithEditorScriptGuard(false);
+    auto comp = (MyUEnhancedInputComponent*)Component;
+    comp->EnhancedActionEventBindings.Add_GetRef(MoveTemp(AB));
+}
+
+void UTSExtensionMethods::SetPath(FSoftObjectPath SoftObjectPath, const FString& Path)
+{
+    SoftObjectPath.SetPath(Path);
+}
+
+UObject* UTSExtensionMethods::ResolveObject(FSoftObjectPath SoftObjectPath)
+{
+    return SoftObjectPath.ResolveObject();
+}
+
 FString UTSExtensionMethods::GetContentDir(UGameInstance* gameInstance)
 {
     return FPaths::ProjectContentDir();

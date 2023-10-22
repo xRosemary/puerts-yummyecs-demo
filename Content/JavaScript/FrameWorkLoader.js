@@ -5,6 +5,8 @@ const yummyecs_1 = require("yummyecs");
 const Define_1 = require("./Define");
 class FrameWorkLoader extends UE.Actor {
     ReceiveBeginPlay() {
+        // 将Game instance传给框架
+        yummyecs_1.C.InitGameInstance(this.GetGameInstance());
         // 初始化系统池
         yummyecs_1.F.SystemPoolStore.getInstance().systems.push(new yummyecs_1.F.PoolSystem());
         // 加载默认System
