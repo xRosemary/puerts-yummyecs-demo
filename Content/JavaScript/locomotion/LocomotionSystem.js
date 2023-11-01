@@ -13,7 +13,6 @@ const Define_1 = require("./Define");
 const PublicAE_1 = require("./PublicAE");
 const character_1 = require("../character");
 const gm_1 = require("./gm");
-const ui_1 = require("./ui");
 let GameWorld;
 class LocomotionSystem extends yummyecs_1.F.System {
     onPlayerSpawnedEvent(event) {
@@ -22,8 +21,8 @@ class LocomotionSystem extends yummyecs_1.F.System {
         gm_1.GMList.forEach((v) => {
             yummyecs_1.F.registerGMCommand(v.func, v.paramTypes);
         });
-        yummyecs_1.F.CreateSystemAction.do(ui_1.TestUISystem);
-        yummyecs_1.F.OpenUMG.do(ui_1.UMG_NAME);
+        // F.CreateSystemAction.do(TestUISystem);
+        // F.OpenUMG.do(UMG_NAME);
     }
     onSwitchLocomotionLayerAction(action) {
         let player = action.player;

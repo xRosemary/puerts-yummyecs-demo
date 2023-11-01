@@ -29,6 +29,11 @@
         "processed": true,
         "isBP": true
     },
+    "F:/UE5Project/TPS/TypeScript/character/CharacterSystem.ts": {
+        "version": "1f6c69577e60acf66a8e20c5ae420e82",
+        "processed": true,
+        "isBP": false
+    },
     "F:/UE5Project/TPS/TypeScript/character/PublicAE.ts": {
         "version": "34b08537250d615b589e8eb135ba9f29",
         "processed": true,
@@ -45,7 +50,7 @@
         "isBP": false
     },
     "F:/UE5Project/TPS/TypeScript/locomotion/LocomotionSystem.ts": {
-        "version": "ada2191abafe0f3571843c78d4909d1b",
+        "version": "6bc4af1f712cdafb8b040d6fac5d3094",
         "processed": true,
         "isBP": false
     },
@@ -707,10 +712,5 @@
     "F:/UE5Project/TPS/Content/JavaScript/PuertsEditor/node_modules/typescript/lib/lib.dom.iterable.d.ts": {
         "version": "977f6792324dbfc2fcc8eadc6f1b0452",
         "processed": false
-    },
-    "F:/UE5Project/TPS/TypeScript/character/CharacterSystem.ts": {
-        "version": "1f6c69577e60acf66a8e20c5ae420e82",
-        "processed": true,
-        "isBP": false
     }
 }

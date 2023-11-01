@@ -17,8 +17,8 @@ export class LocomotionSystem extends F.System {
             F.registerGMCommand(v.func, v.paramTypes);
         });
 
-        F.CreateSystemAction.do(TestUISystem);
-        F.OpenUMG.do(UMG_NAME);
+        // F.CreateSystemAction.do(TestUISystem);
+        // F.OpenUMG.do(UMG_NAME);
     }
 
     @D.listen(SwitchLocomotionLayerAction)
