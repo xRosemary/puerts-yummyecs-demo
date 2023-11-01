@@ -89,6 +89,16 @@
         "processed": true,
         "isBP": false
     },
+    "F:/UE5Project/TPS/TypeScript/weapon/Weapon.ts": {
+        "version": "b748c43d0978e291b5f61f7c80ac37ef",
+        "processed": true,
+        "isBP": true
+    },
+    "F:/UE5Project/TPS/TypeScript/weapon/index.ts": {
+        "version": "d41d8cd98f00b204e9800998ecf8427e",
+        "processed": true,
+        "isBP": false
+    },
     "F:/UE5Project/TPS/node_modules/yummyecs/types/index.d.ts": {
         "version": "e3a258ab87adb59f1624388fa4384fae",
         "processed": false
