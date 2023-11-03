@@ -18,5 +18,13 @@ public class TPS : ModuleRules
 			"UMG", 
 			"Puerts" 
 		});
+
+		PrivateDependencyModuleNames.AddRange(new string[]
+		{
+			"GameplayAbilities",
+			"GameplayTags",
+			"GameplayTasks"
+		});
+
 	}
 }

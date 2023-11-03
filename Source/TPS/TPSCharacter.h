@@ -5,6 +5,9 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "AbilitySystemInterface.h"
+#include "AbilitySystemComponent.h"
+#include "HealthAttributeSet.h"
 #include "TPSCharacter.generated.h"
 
 class USpringArmComponent;
@@ -16,7 +19,7 @@ struct FInputActionValue;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
-class ATPSCharacter : public ACharacter
+class ATPSCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
@@ -47,6 +50,20 @@ class ATPSCharacter : public ACharacter
 public:
 	ATPSCharacter();
 	
+#pragma region Ability
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = GameplayAbilities, meta = (AllowPrivateAccess = "true"))
+	class UAbilitySystemComponent* AbilitySystem;
+
+	UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+
+	// Ability array
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Abilities")
+	TArray<TSubclassOf<UGameplayAbility>> CharacterAbilities;
+
+	UPROPERTY()
+	class UHealthAttributeSet* HealthSet;
+#pragma endregion
 
 protected:
 

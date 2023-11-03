@@ -56,8 +56,13 @@ ATPSCharacter::ATPSCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
-	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+	AbilitySystem = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystem"));
+	HealthSet = CreateDefaultSubobject<UHealthAttributeSet>(TEXT("HealthSet"));
+}
+
+UAbilitySystemComponent* ATPSCharacter::GetAbilitySystemComponent() const
+{
+	return AbilitySystem;
 }
 
 void ATPSCharacter::BeginPlay()
@@ -65,14 +70,24 @@ void ATPSCharacter::BeginPlay()
 	// Call the base class  
 	Super::BeginPlay();
 
-	//Add Input Mapping Context
-	/*if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
+	if (nullptr != AbilitySystem)
 	{
-		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+		// 赋予技能
+		if (HasAuthority() && CharacterAbilities.Num() > 0)
 		{
-			Subsystem->AddMappingContext(DefaultMappingContext, 0);
+			for (auto i = 0; i < CharacterAbilities.Num(); i++)
+			{
+				if (CharacterAbilities[i] == nullptr)
+				{
+					continue;
+				}
+				AbilitySystem->GiveAbility(FGameplayAbilitySpec(CharacterAbilities[i].GetDefaultObject(), 1, 0));
+			}
 		}
-	}*/
+
+		// 初始化AbilitySystem
+		AbilitySystem->InitAbilityActorInfo(this, this);
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////
