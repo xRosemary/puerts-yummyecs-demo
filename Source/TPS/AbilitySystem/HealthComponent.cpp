@@ -2,7 +2,13 @@
 
 
 #include "HealthComponent.h"
-#include "HealthAttributeSet.h"
+#include "HealthSet.h"
+
+#define RegisterAttributeDelegate(AttributeName) \
+	UHealthComponent::AttributeTagMap.Add(HealthSet->Get##AttributeName##Attribute().GetUProperty(), \
+	GASGameplayTags::TAG_Gameplay_##AttributeName##Changed); \
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate \
+	(HealthSet->Get##AttributeName##Attribute()).AddUObject(this, &UHealthComponent::OnNativeAttributeValueChange)
 
 // Sets default values for this component's properties
 UHealthComponent::UHealthComponent()
@@ -13,11 +19,10 @@ UHealthComponent::UHealthComponent()
 
 	AbilitySystemComponent = nullptr;
 
-	//AttributeSet = CreateDefaultSubobject<UHealthAttributeSet>(TEXT("AttributeSet"));
 	HealthSet = nullptr;
 }
 
-void UHealthComponent::Initialize(UAbilitySystemComponent* ASC)
+void UHealthComponent::InitializeWithAbilitySystem(UAbilitySystemComponent* ASC)
 {
 	AActor* Owner = GetOwner();
 	check(Owner);
@@ -30,12 +35,17 @@ void UHealthComponent::Initialize(UAbilitySystemComponent* ASC)
 
 	AbilitySystemComponent = ASC;
 
-	HealthSet = AbilitySystemComponent->GetSet<UHealthAttributeSet>();
+	HealthSet = AbilitySystemComponent->GetSet<UHealthSet>();
 	if (!HealthSet)
 	{
 		UE_LOG(LogTemp, Error, TEXT("HealthSet is NULL"), *GetNameSafe(Owner));
 		return;
 	}
+	
+	RegisterAttributeDelegate(Health);
+	RegisterAttributeDelegate(MaxHealth);
+	RegisterAttributeDelegate(Physical);
+	RegisterAttributeDelegate(MaxPhysical);
 }
 
 void UHealthComponent::Uninitialize()
@@ -90,3 +100,19 @@ float UHealthComponent::GetPhysicalNormalized() const
 	return 0.0f;
 }
 
+void UHealthComponent::OnNativeAttributeValueChange(const FOnAttributeChangeData& AttributeChangeData)
+{
+	FGameplayTag* Tag = UHealthComponent::AttributeTagMap.Find(AttributeChangeData.Attribute);
+
+	if(!Tag || !Tag->IsValid())
+	{
+		return;
+	}
+	FGASOnAttributeChangeData Data;
+	Data.NewValue = AttributeChangeData.NewValue;
+	Data.OldValue = AttributeChangeData.OldValue;
+	Data.Tag = *Tag;
+	OnAttributeChanged.Broadcast(Data);
+}
+
+#undef RegisterAttributeDelegate

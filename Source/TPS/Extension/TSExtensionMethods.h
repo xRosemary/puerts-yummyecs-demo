@@ -6,7 +6,7 @@
 #include "ExtensionMethods.h"
 #include "GameFramework/Actor.h"
 #include "Components/ActorComponent.h"
-#include "TSGameInstance.h"
+#include "TPS/Game/TSGameInstance.h"
 #include "EnhancedInputSubsystems.h"
 #include "Misc/Paths.h"
 #include "Engine/GameInstance.h"

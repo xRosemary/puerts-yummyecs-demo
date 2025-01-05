@@ -5,12 +5,27 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "AbilitySystemComponent.h"
-#include "HealthBase.h"
 #include "HealthComponent.generated.h"
 
+USTRUCT(BlueprintType)
+struct FGASOnAttributeChangeData
+{
+	GENERATED_BODY()
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Attribute")
+	FGameplayTag Tag;
 
-UCLASS(Blueprintable, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class TPS_API UHealthComponent : public UActorComponent, public IHealthBase
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Attribute")
+	float NewValue;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Attribute")
+	float OldValue;
+};
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGASOnAttributeValueChange, const FGASOnAttributeChangeData &, AttributeChangeData);
+
+UCLASS(Blueprintable, Meta = (BlueprintSpawnableComponent))
+class TPS_API UHealthComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
@@ -19,14 +34,17 @@ public:
 	UHealthComponent();
 
 public:
+	UPROPERTY(BlueprintAssignable, Category = "Attribute")
+	FGASOnAttributeValueChange OnAttributeChanged;
+
 	UFUNCTION(BlueprintCallable, Category = "Health")
-	void Initialize(UAbilitySystemComponent* ASC);
+	void InitializeWithAbilitySystem(UAbilitySystemComponent *ASC);
 
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	void Uninitialize();
 
 	UFUNCTION(BlueprintPure, Category = "Health")
-	static UHealthComponent* FindHealthComponent(const AActor* Actor) { return (Actor ? Actor->FindComponentByClass<UHealthComponent>() : nullptr); }
+	static UHealthComponent *FindHealthComponent(const AActor *Actor) { return (Actor ? Actor->FindComponentByClass<UHealthComponent>() : nullptr); }
 
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	float GetHealth() const;
@@ -48,12 +66,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	float GetPhysicalNormalized() const;
 
-	//UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category = "Health")
-	//void StartDeath();
+protected:
+	void OnNativeAttributeValueChange(const FOnAttributeChangeData &AttributeChangeData);
+
 protected:
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
 	UPROPERTY()
-	TObjectPtr<const class UHealthAttributeSet> HealthSet;
+	TObjectPtr<const class UHealthSet> HealthSet;
+
+	static inline TMap<FGameplayAttribute, FGameplayTag> AttributeTagMap;
 };

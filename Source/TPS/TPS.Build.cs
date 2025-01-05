@@ -23,8 +23,9 @@ public class TPS : ModuleRules
 		{
 			"GameplayAbilities",
 			"GameplayTags",
-			"GameplayTasks"
-		});
+			"GameplayTasks",
+            "GameplayMessageRuntime",
+        });
 
 	}
 }
