@@ -11,8 +11,8 @@ let GameWorld: UE.World;
 export class LocomotionSystem extends F.System {
     @D.listen(PlayerSpawnedEvent)
     protected onPlayerSpawnedEvent(event: PlayerSpawnedEvent) {
-        this.linkAnimClassLayers(ANIM_LAYER.Unarmed, event.character);
-        GameWorld = event.character.GetWorld();
+        this.linkAnimClassLayers(ANIM_LAYER.Unarmed, event.Character);
+        GameWorld = event.Character.GetWorld();
         GMList.forEach((v) => {
             F.registerGMCommand(v.func, v.paramTypes);
         });

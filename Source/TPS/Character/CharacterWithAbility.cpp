@@ -20,8 +20,7 @@ ACharacterWithAbility::ACharacterWithAbility()
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
 }
 
-// Called when the game starts or when spawned
-void ACharacterWithAbility::BeginPlay()
+void ACharacterWithAbility::InitAbilitySystem()
 {
 	if (nullptr == AbilitySystem)
 	{
@@ -43,11 +42,6 @@ void ACharacterWithAbility::BeginPlay()
 	// 初始化AbilitySystem
 	AbilitySystem->InitAbilityActorInfo(this, this);
 	HealthComponent->InitializeWithAbilitySystem(AbilitySystem);
-
-	//没有这个蓝图的BeginPlay都不执行了
-	Super::BeginPlay();
-
-	OnPostNativeBeginPlay.Broadcast();
 }
 
 UAbilitySystemComponent* ACharacterWithAbility::GetAbilitySystemComponent() const

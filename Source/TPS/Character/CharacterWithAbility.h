@@ -18,16 +18,16 @@ public:
 	// Sets default values for this character's properties
 	ACharacterWithAbility();
 
-	UPROPERTY(BlueprintAssignable)
-	FPostNativeBeginPlay OnPostNativeBeginPlay;
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 #pragma region Ability
 public:
 	UAbilitySystemComponent *GetAbilitySystemComponent() const override;
+
+	UFUNCTION(BlueprintCallable)
+	void InitAbilitySystem();
+
+public:
+	UPROPERTY()
+	TObjectPtr<const class UHealthSet> HealthSet;
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "GAS|Character", meta = (AllowPrivateAccess = "true"))
@@ -38,8 +38,5 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "GAS|Character", Meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UHealthComponent> HealthComponent;
-
-	UPROPERTY()
-	TObjectPtr<const class UHealthSet> HealthSet;
 #pragma endregion
 };
